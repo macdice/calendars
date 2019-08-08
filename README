@@ -1,0 +1,27 @@
+Make sure that pg_config is in your PATH and then run make install (possibly
+as superuser depending on how/where PostgreSQL is installed).
+
+For example:
+
+$ PATH=/where/is/postgres/bin:$PATH make install
+
+Then in psql:
+
+postgres=# create extension calendars;
+CREATE EXTENSION
+postgres=# select to_char(current_date, 'YYYY-MM-DD', 'Ethiopian');
+                    to_char                    
+-----------------------------------------------
+ <put Ethiopian date for day number 7160 here>
+(1 row)
+
+postgres=# select to_date('....', 'YYYY-MM-DD', 'Ethiopian');
+  to_date   
+------------
+ 2000-01-01
+(1 row)
+
+TODO:
+
+* Real implementations of the functions in ethiopian.c
+* Perhaps some other calendars from https://en.wikipedia.org/wiki/List_of_calendars
