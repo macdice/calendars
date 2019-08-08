@@ -1,0 +1,4 @@
+comment = 'calendar conversion routines'
+default_version = '1.0'
+module_pathname = '$libdir/calendars'
+relocatable = true
